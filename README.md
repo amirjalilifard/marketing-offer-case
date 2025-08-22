@@ -45,8 +45,7 @@ This creates the **training dataset** for modeling the effectiveness of offers: 
 
 
 
-
-### Coltrol group data
+### Control group data
 This is a group whose transactions doesnt depend on offers or has no transaction at all.
 
 I will use this to calculate the uplift.
