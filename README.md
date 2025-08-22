@@ -29,7 +29,7 @@ This code builds a **labeled dataset** that links each user (profile) with each 
 
    Mathematically, for each transaction `t` and offer `o`:  
 
-![Screenshot From 2025-08-21 11-07-59.png](./imgs/Screenshot From 2025-08-21 11-07-59.png "Screenshot From 2025-08-21 11-07-59.png")
+![Screenshot From 2025-08-21 11-07-59.png](./Screenshot From 2025-08-21 11-07-59.png "Screenshot From 2025-08-21 11-07-59.png")
 
 3. **Aggregate per offer**  
    - Since an offer may be linked with multiple transactions, we take the **maximum** of `led_to_tx`.  
