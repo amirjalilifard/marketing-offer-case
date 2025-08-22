@@ -65,7 +65,7 @@ We define two types of users based on their transaction behavior relative to off
 
 ---
 
-**Case 1: Users who never transacted**
+Case 1: Users who never transacted
 
 $$
 class =
@@ -75,7 +75,7 @@ class =
 $$
 ---
 
-**Case 2: Users who transacted outside the offer window (loyal buyers)**
+Case 2: Users who transacted outside the offer window (loyal buyers)
 
 $$
 class =
@@ -86,7 +86,7 @@ class =
 $$
 ---
 
-**Final dataset**
+Final dataset:
 
 
 $$
