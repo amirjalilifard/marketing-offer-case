@@ -68,29 +68,22 @@ We define two types of users based on their transaction behavior relative to off
 Case 1: Users who never transacted
 
 $$
-class =
-\begin{cases}
-0, & \text{if user has no transaction records in the transaction table (never transacted)}
-\end{cases}
+class = 0 \quad \text{if user has no transaction records in the transaction table (never transacted)}
 $$
 ---
 
 Case 2: Users who transacted outside the offer window (loyal buyers)
 
 $$
-class =
-\begin{cases}
-1, & \text{if } transaction \  time\ since\ test\ tart < offer \ time \  since \  test \ start \\
-   & \quad \text{and } transaction \ time \ since \ test \ start \geq offer \ time \ since \ test \ start - 30
-\end{cases}
+class = 1 \quad \text{if } transaction.time\_since\_test\_start < offer.time\_since\_test\_start \\
+\quad \text{and } transaction.time\_since\_test\_start \geq offer.time\_since\_test\_start - 30
 $$
 ---
 
 Final dataset:
 
-
 $$
-user \ profiles \ classes = never \ transacted\ users \cup outside \ window \ users
+user\_profiles\_classes = never\_transacted\_users \cup outside\_window\_users
 $$
 ---
 
