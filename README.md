@@ -61,30 +61,29 @@ Low time gap means possible **False Negatives**, and high time gap might lead to
 
 ### User Profile Classes Definition
 
-We define two types of users based on their transaction behavior relative to offers:
+- **Case 1: Users who never transacted**
+
+$$
+class = 0, \quad \text{if user has no transaction records in the transaction table (never transacted)}
+$$  
 
 ---
 
-Case 1: Users who never transacted
+- **Case 2: Users who transacted outside the offer window (loyal buyers)**
 
 $$
-class = 0 \quad \text{if user has no transaction records in the transaction table (never transacted)}
-$$
----
-
-Case 2: Users who transacted outside the offer window (loyal buyers)
-
-$$
-class = 1 \quad \text{if } transaction.time\_since\_test\_start < offer.time\_since\_test\_start \\
+class = 1, \quad \text{if } transaction.time\_since\_test\_start < offer.time\_since\_test\_start \\
 \quad \text{and } transaction.time\_since\_test\_start \geq offer.time\_since\_test\_start - 30
-$$
+$$  
+
 ---
 
-Final dataset:
+Final dataset definition
 
 $$
-user\_profiles\_classes = never\_transacted\_users \cup outside\_window\_users
+user \ profiles\ classes \  = never \ transacted \ users \cup outside \ window \ users
 $$
+
 ---
 
 Here:
