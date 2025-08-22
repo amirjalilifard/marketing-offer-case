@@ -72,8 +72,8 @@ $$
 - **Case 2: Users who transacted outside the offer window (loyal buyers)**
 
 $$
-class = 1, \quad \text{if } transaction.time\_since\_test\_start < offer.time\_since\_test\_start \\
-\quad \text{and } transaction.time\_since\_test\_start \geq offer.time\_since\_test\_start - 30
+class = 1, \quad \text{if } transaction.time \ since \ test \ start < offer.time \ since \ test \ start \\
+\quad \text{and } transaction.time \ since\_test \ start \geq offer.time \ since \ test \ start - 30
 $$  
 
 ---
