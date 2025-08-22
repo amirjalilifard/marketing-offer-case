@@ -29,7 +29,13 @@ This code builds a **labeled dataset** that links each user (profile) with each 
 
    Mathematically, for each transaction `t` and offer `o`:  
 
-![Screenshot From 2025-08-21 11-07-59.png](./imgs/Screenshot From 2025-08-21 11-07-59.png "Screenshot From 2025-08-21 11-07-59.png")
+$$
+led\_to\_tx =
+\begin{cases}
+1, & \text{if } o.time\ since \ test \ start < t.time \ since \ test \ start \leq o.time \ since \ test \ start + o.duration \\
+0, & \text{otherwise}
+\end{cases}
+$$
 
 3. **Aggregate per offer**  
    - Since an offer may be linked with multiple transactions, we take the **maximum** of `led_to_tx`.  
@@ -61,20 +67,31 @@ We define two types of users based on their transaction behavior relative to off
 
 **Case 1: Users who never transacted**
 
-![Screenshot From 2025-08-21 11-12-37.png](./imgs/Screenshot From 2025-08-21 11-12-37.png "Screenshot From 2025-08-21 11-12-37.png")
-
+$$
+class =
+\begin{cases}
+0, & \text{if user has no transaction records in the transaction table (never transacted)}
+\end{cases}
+$$
 ---
 
 **Case 2: Users who transacted outside the offer window (loyal buyers)**
 
-![Screenshot From 2025-08-21 11-12-48.png](./imgs/Screenshot From 2025-08-21 11-12-48.png "Screenshot From 2025-08-21 11-12-48.png")
-
+$$
+class =
+\begin{cases}
+1, & \text{if } transaction \  time\ since\ test\ tart < offer \ time \  since \  test \ start \\
+   & \quad \text{and } transaction \ time \ since \ test \ start \geq offer \ time \ since \ test \ start - 30
+\end{cases}
+$$
 ---
 
 **Final dataset**
 
-![Screenshot From 2025-08-21 11-13-01.png](./imgs/Screenshot From 2025-08-21 11-13-01.png "Screenshot From 2025-08-21 11-13-01.png")
 
+$$
+user \ profiles \ classes = never \ transacted\ users \cup outside \ window \ users
+$$
 ---
 
 Here:
