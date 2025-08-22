@@ -112,5 +112,3 @@ Formally, the **uplift** can be written as:
 **Uplift(x)=P(Transaction∣x,Offer) − P(Transaction∣x,No Offer)**
 
 Thus, the problem is not just predictive, but **causal**: we want to isolate the incremental effect of the offer on transactions. A positive uplift indicates that the offer increases the likelihood of a transaction, while a negative uplift means the offer may actually discourage transactions or simply attract users who would have transacted anyway (cannibalization).
-
-Here I first start with some data analysis. 
