@@ -26,7 +26,7 @@ This code builds a **labeled dataset** that links each user (profile) with each 
 2. **Identify offer-driven transactions**  
    - A transaction is considered influenced by an offer if it happens *after* the offer start time and *within the offer’s validity window (`duration`)*.  
    - If such a transaction exists, we label it with `led_to_tx = 1`. Otherwise, it gets `0`.
-   - If the transaction is of type 'Discount' or 'BOGO', it should also have an amount >= min_value. 
+   - If the offer is of type 'Discount' or 'BOGO', its following transactions should also have an amount >= min_value in addition to the previous conditions. 
 
    Mathematically, for each transaction `t` and offer `o`:  
 
